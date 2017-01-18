@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2E0344BF1E2DB6700010AC04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0344BE1E2DB6700010AC04 /* AppDelegate.swift */; };
-		2E0344C11E2DB6700010AC04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0344C01E2DB6700010AC04 /* ViewController.swift */; };
+		2E0344C11E2DB6700010AC04 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0344C01E2DB6700010AC04 /* BookListViewController.swift */; };
 		2E0344C41E2DB6700010AC04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E0344C21E2DB6700010AC04 /* Main.storyboard */; };
 		2E0344C61E2DB6700010AC04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E0344C51E2DB6700010AC04 /* Assets.xcassets */; };
 		2E0344C91E2DB6700010AC04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E0344C71E2DB6700010AC04 /* LaunchScreen.storyboard */; };
 		2E0344D41E2DB6700010AC04 /* workshop3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0344D31E2DB6700010AC04 /* workshop3Tests.swift */; };
 		2E0344DF1E2DB6700010AC04 /* workshop3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0344DE1E2DB6700010AC04 /* workshop3UITests.swift */; };
+		2E0344EF1E2F08B70010AC04 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0344EE1E2F08B70010AC04 /* BookCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		2E0344BB1E2DB6700010AC04 /* workshop3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = workshop3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E0344BE1E2DB6700010AC04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2E0344C01E2DB6700010AC04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2E0344C01E2DB6700010AC04 /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
 		2E0344C31E2DB6700010AC04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2E0344C51E2DB6700010AC04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E0344C81E2DB6700010AC04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		2E0344DA1E2DB6700010AC04 /* workshop3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = workshop3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E0344DE1E2DB6700010AC04 /* workshop3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workshop3UITests.swift; sourceTree = "<group>"; };
 		2E0344E01E2DB6700010AC04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E0344EE1E2F08B70010AC04 /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +99,9 @@
 		2E0344BD1E2DB6700010AC04 /* workshop3 */ = {
 			isa = PBXGroup;
 			children = (
+				2E0344ED1E2F08A90010AC04 /* view */,
 				2E0344BE1E2DB6700010AC04 /* AppDelegate.swift */,
-				2E0344C01E2DB6700010AC04 /* ViewController.swift */,
+				2E0344C01E2DB6700010AC04 /* BookListViewController.swift */,
 				2E0344C21E2DB6700010AC04 /* Main.storyboard */,
 				2E0344C51E2DB6700010AC04 /* Assets.xcassets */,
 				2E0344C71E2DB6700010AC04 /* LaunchScreen.storyboard */,
@@ -123,6 +126,14 @@
 				2E0344E01E2DB6700010AC04 /* Info.plist */,
 			);
 			path = workshop3UITests;
+			sourceTree = "<group>";
+		};
+		2E0344ED1E2F08A90010AC04 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2E0344EE1E2F08B70010AC04 /* BookCell.swift */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +273,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E0344C11E2DB6700010AC04 /* ViewController.swift in Sources */,
+				2E0344EF1E2F08B70010AC04 /* BookCell.swift in Sources */,
+				2E0344C11E2DB6700010AC04 /* BookListViewController.swift in Sources */,
 				2E0344BF1E2DB6700010AC04 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,6 +524,7 @@
 				2E0344E51E2DB6700010AC04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2E0344E61E2DB6700010AC04 /* Build configuration list for PBXNativeTarget "workshop3Tests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +533,7 @@
 				2E0344E81E2DB6700010AC04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2E0344E91E2DB6700010AC04 /* Build configuration list for PBXNativeTarget "workshop3UITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +542,7 @@
 				2E0344EB1E2DB6700010AC04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
