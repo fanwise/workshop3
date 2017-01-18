@@ -23,16 +23,17 @@ class BookListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return BookList().list.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let CellID = "BookCell"
         let cell = tableView.dequeueReusableCell(withIdentifier:CellID, for: indexPath) as! BookCell
         
-        cell.bookName?.text = "book1"
-        cell.author?.text = "author1"
-        cell.available?.text = "Available"
+        let book:Book = BookList().list[indexPath.row]
+        cell.bookName?.text = book.name
+        cell.author?.text = book.author
+        cell.available?.text = book.isAvailable ? "Available" : "Not Available"
         
         return cell
     }
