@@ -47,6 +47,11 @@ class BookListViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "DetailViewController", sender: nil)
+    }
+    
     func loadDataFromRealm() {
         let results = realm.objects(Book.self)
         self.bookList = Array(results)
