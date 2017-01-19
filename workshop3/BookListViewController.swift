@@ -49,7 +49,14 @@ class BookListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "DetailViewController", sender: nil)
+        performSegue(withIdentifier: "DetailViewController", sender: bookList[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailViewController" {
+            let destinationViewController = segue.destination as? DetailViewController
+            destinationViewController?.configViewModel(book: sender as! Book)
+        }
     }
     
     func loadDataFromRealm() {
