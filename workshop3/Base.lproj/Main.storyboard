@@ -45,10 +45,10 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookCell" id="t5p-dI-Cqq" customClass="BookCell" customModule="workshop3" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="116" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="115.5" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t5p-dI-Cqq" id="RCu-JM-Pic">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dU-d7-fcb">
@@ -92,6 +92,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Books" id="QkH-lg-GDu"/>
+                    <connections>
+                        <outlet property="bookNumbers" destination="s1y-4L-YQc" id="0vL-fO-Lx5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ygk-Nw-bvt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

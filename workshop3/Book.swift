@@ -6,10 +6,10 @@
 //  Copyright © 2017 Wei Fan. All rights reserved.
 //
 
-import Foundation
+import RealmSwift
 
-struct Book {
-    var name: String
-    var author: String
-    var isAvailable: Bool
+class Book: Object {
+    dynamic var name = ""
+    dynamic var author = ""
+    dynamic var isAvailable = true
 }
