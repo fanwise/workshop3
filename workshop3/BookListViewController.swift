@@ -15,12 +15,12 @@ class BookListViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadStaticData()
-        bookNumbers.text = "\(bookList.count)本"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadDataFromRealm()
+        bookNumbers.text = "\(bookList.count)本"
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,16 +47,10 @@ class BookListViewController: UITableViewController {
         return cell
     }
     
-    func loadStaticData() {
-        bookList.removeAll()
-        for item in StaticData().bookList {
-            let book = Book()
-            book.name = item["name"] as! String
-            book.author = item["author"] as! String
-            book.isAvailable = item["isAvailable"] as! Bool
-            bookList.append(book)
-        }
+    func loadDataFromRealm() {
+        let results = realm.objects(Book.self)
+        self.bookList = Array(results)
     }
-    
+
 }
 

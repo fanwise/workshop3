@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import RealmSwift
+
+let realm = try! Realm()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var bookList: Array<Book> = [Book]()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        loadStaticData()
+        saveDataToRealm()
         return true
     }
 
@@ -41,6 +45,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func loadStaticData() {
+        self.bookList.removeAll()
+        for item in StaticData().bookList {
+            let book = Book()
+            book.name = item["name"] as! String
+            book.author = item["author"] as! String
+            book.isAvailable = item["isAvailable"] as! Bool
+            self.bookList.append(book)
+        }
+    }
+    
+    func saveDataToRealm() {
+        try! realm.write {
+            realm.deleteAll()
+        }
+        
+        for book in self.bookList {
+            try! realm.write {
+                realm.add(book)
+            }
+        }
+    }
 
 }
 
