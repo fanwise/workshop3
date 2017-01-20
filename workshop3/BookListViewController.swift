@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class BookListViewController: UITableViewController {
 
     @IBOutlet weak var bookNumbers: UILabel!
     var bookList: Array<Book> = [Book]()
+    var notificationToken: NotificationToken? = nil
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -62,6 +64,21 @@ class BookListViewController: UITableViewController {
     func loadDataFromRealm() {
         let results = realm.objects(Book.self)
         self.bookList = Array(results)
+        
+        notificationToken = results.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
+            guard let tableView = self?.tableView else { return }
+            switch changes {
+            case .initial:
+                break
+            case .update(_, _, _, let modifications):
+                tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }),
+                                     with: .automatic)
+                break
+            case .error(let error):
+                fatalError("\(error)")
+                break
+            }
+        }
     }
 
 }
