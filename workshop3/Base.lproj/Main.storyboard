@@ -134,6 +134,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1y6-mt-vGA">
                                 <rect key="frame" x="141.5" y="267" width="92" height="30"/>
                                 <state key="normal" title="改变借阅状态"/>
+                                <connections>
+                                    <action selector="changeStatus:" destination="6Rf-xt-mBo" eventType="touchUpInside" id="lTw-yU-PVG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -152,7 +155,7 @@
                     <connections>
                         <outlet property="author" destination="c3g-yo-j0h" id="FhS-YF-f8L"/>
                         <outlet property="available" destination="IBa-HD-MoQ" id="0Ph-1D-kbu"/>
-                        <outlet property="changeStatus" destination="1y6-mt-vGA" id="rfc-Fk-p9Z"/>
+                        <outlet property="changeStatusButton" destination="1y6-mt-vGA" id="MTb-4i-Nyc"/>
                         <outlet property="name" destination="a8m-yV-KmR" id="Awr-W4-laf"/>
                     </connections>
                 </viewController>
